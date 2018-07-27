@@ -1,4 +1,4 @@
-package com.learnings.algorithm.sorting;
+package com.learnings.algorithm.selection_sort;
 
 public class SelectionSort {
 	
