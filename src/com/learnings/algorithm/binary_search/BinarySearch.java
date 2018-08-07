@@ -28,6 +28,6 @@ public class BinarySearch {
 	}
 	
 	private int getMidIndex(int firstIndex, int lastIndex) {
-		return (int) Math.floor((firstIndex + lastIndex) / 2);
+		return (firstIndex + lastIndex) / 2;
 	}
 }
