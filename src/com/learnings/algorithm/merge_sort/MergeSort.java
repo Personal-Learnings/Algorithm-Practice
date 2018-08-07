@@ -2,14 +2,7 @@ package com.learnings.algorithm.merge_sort;
 
 public class MergeSort {
 	
-	public int [] sort (int [] data) {
-		
-		System.out.print("Input Array: [");
-		for(int i=0; i<data.length; i++)
-			System.out.print(data[i] + " ");
-		System.out.print("]\n");
-		System.out.println();
-		
+	public int [] sort (int [] data) {		
 		int firstIndex = 0, lastIndex = data.length - 1;
 		return mergeSort(data, firstIndex, lastIndex);
 	}
@@ -96,6 +89,6 @@ public class MergeSort {
 	}
 	
 	private int getMidIndex(int firstIndex, int lastIndex) {
-		return (int) Math.floor((firstIndex + lastIndex) / 2);
+		return (firstIndex + lastIndex) / 2;
 	}
 }
