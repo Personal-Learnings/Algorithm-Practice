@@ -9,14 +9,14 @@ public class QuickSort {
 	private int [] quickSort(int [] data, int firstIndex, int lastIndex) {
 		
 		if(firstIndex < lastIndex) {
-			int partitionIndex = partition(data, firstIndex, lastIndex);
+			int partitionIndex = partitionWithLastIndexAsPivot(data, firstIndex, lastIndex);
 			quickSort(data, firstIndex, partitionIndex - 1);
 			quickSort(data, partitionIndex + 1, lastIndex);
 		}
 		return data;
 	}
 	
-	private int partition(int [] data, int firstIndex, int lastIndex) {
+	private int partitionWithLastIndexAsPivot(int [] data, int firstIndex, int lastIndex) {
 		
 		int partitionIndex = 0;
 		int pivot = data[lastIndex];
@@ -24,6 +24,24 @@ public class QuickSort {
 		for(int j = firstIndex, i = firstIndex - 1; j <= lastIndex; j++) {
 			if(data[j] <= pivot) {
 				++i;
+				swapElements(data, i, j);
+				partitionIndex = i;
+			}
+		}
+		System.out.println("Partition Index: " + partitionIndex + " Parition Value = " + data[partitionIndex]);
+		printArray(data);
+		return partitionIndex;
+	}
+
+	@SuppressWarnings("unused")
+	private int partitionWithFirstIndexAsPivot(int [] data, int firstIndex, int lastIndex) {
+		
+		int partitionIndex = 0;
+		int pivot = data[firstIndex];
+		
+		for(int j = lastIndex, i = lastIndex + 1; j >= firstIndex; j--) {
+			if(pivot <= data[j]) {
+				--i;
 				swapElements(data, i, j);
 				partitionIndex = i;
 			}
