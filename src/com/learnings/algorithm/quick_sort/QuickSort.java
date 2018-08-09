@@ -9,14 +9,14 @@ public class QuickSort {
 	private int [] quickSort(int [] data, int firstIndex, int lastIndex) {
 		
 		if(firstIndex < lastIndex) {
-			int partitionIndex = partitionWithLastIndexAsPivot(data, firstIndex, lastIndex);
+			int partitionIndex = partitionWithPivotAsLastIndex(data, firstIndex, lastIndex);
 			quickSort(data, firstIndex, partitionIndex - 1);
 			quickSort(data, partitionIndex + 1, lastIndex);
 		}
 		return data;
 	}
 	
-	private int partitionWithLastIndexAsPivot(int [] data, int firstIndex, int lastIndex) {
+	private int partitionWithPivotAsLastIndex(int [] data, int firstIndex, int lastIndex) {
 		
 		int partitionIndex = 0;
 		int pivot = data[lastIndex];
@@ -34,7 +34,7 @@ public class QuickSort {
 	}
 
 	@SuppressWarnings("unused")
-	private int partitionWithFirstIndexAsPivot(int [] data, int firstIndex, int lastIndex) {
+	private int partitionWithPivotAsFirstIndex(int [] data, int firstIndex, int lastIndex) {
 		
 		int partitionIndex = 0;
 		int pivot = data[firstIndex];
